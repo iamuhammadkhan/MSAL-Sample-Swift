@@ -1,24 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Testing_MSAL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="LOC-5n-dL5">
+                                <rect key="frame" x="16" y="84" width="382" height="318"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="d7c-di-2cI">
+                                        <rect key="frame" x="69" y="0.0" width="244.5" height="56"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microsoft Authentication Library" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dI5-pz-dR3">
+                                                <rect key="frame" x="0.0" y="0.0" width="244.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B2C Sample" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6og-Ce-iwm">
+                                                <rect key="frame" x="75.5" y="35.5" width="93.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SU6-Zq-fKh">
+                                        <rect key="frame" x="142" y="104" width="98" height="214"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yh-e4-Bcm">
+                                                <rect key="frame" x="0.0" y="0.0" width="98" height="30"/>
+                                                <state key="normal" title="Authorize"/>
+                                                <connections>
+                                                    <action selector="authorizationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fco-Ex-GvL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ek-d4-xNd">
+                                                <rect key="frame" x="0.0" y="46" width="98" height="30"/>
+                                                <state key="normal" title="Edit Profile"/>
+                                                <connections>
+                                                    <action selector="editProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sRw-gb-f1P"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfQ-8y-6j7">
+                                                <rect key="frame" x="0.0" y="92" width="98" height="30"/>
+                                                <state key="normal" title="Refresh Token"/>
+                                                <connections>
+                                                    <action selector="refreshToken:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3xx-fc-EyG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9W8-0e-zLs">
+                                                <rect key="frame" x="0.0" y="138" width="98" height="30"/>
+                                                <state key="normal" title="Call API"/>
+                                                <connections>
+                                                    <action selector="callApi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HNV-ZU-dqb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uri-3l-bU0">
+                                                <rect key="frame" x="0.0" y="184" width="98" height="30"/>
+                                                <state key="normal" title="Logout"/>
+                                                <connections>
+                                                    <action selector="signoutButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XUb-B7-HTe"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logging" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGV-xu-29v">
+                                <rect key="frame" x="20" y="452" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2vm-oF-xGF">
+                                <rect key="frame" x="20" y="502.5" width="374" height="329.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2vm-oF-xGF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0gJ-dG-Oe9"/>
+                            <constraint firstItem="LOC-5n-dL5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="1Or-VH-A3B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2vm-oF-xGF" secondAttribute="bottom" constant="30" id="4vC-vh-747"/>
+                            <constraint firstItem="2vm-oF-xGF" firstAttribute="top" secondItem="CGV-xu-29v" secondAttribute="bottom" constant="30" id="FoT-5D-jpl"/>
+                            <constraint firstItem="CGV-xu-29v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OdT-hS-iIu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LOC-5n-dL5" secondAttribute="trailing" constant="16" id="UBT-Z8-Qmy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CGV-xu-29v" secondAttribute="trailing" constant="20" id="hgo-BV-ayQ"/>
+                            <constraint firstAttribute="trailing" secondItem="2vm-oF-xGF" secondAttribute="trailing" constant="20" id="mlZ-kv-M8H"/>
+                            <constraint firstItem="CGV-xu-29v" firstAttribute="top" secondItem="LOC-5n-dL5" secondAttribute="bottom" constant="50" id="w4H-8T-J35"/>
+                            <constraint firstItem="LOC-5n-dL5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="yd1-1a-eIH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="callGraphApiButton" destination="9W8-0e-zLs" id="sGu-Vh-4RD"/>
+                        <outlet property="editProfileButton" destination="5ek-d4-xNd" id="Dyo-qf-S9G"/>
+                        <outlet property="loggingText" destination="2vm-oF-xGF" id="fw0-1g-LE9"/>
+                        <outlet property="refreshTokenButton" destination="RfQ-8y-6j7" id="VKP-6l-Ybe"/>
+                        <outlet property="signoutButton" destination="uri-3l-bU0" id="ez2-jw-jqS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="129" y="94"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
