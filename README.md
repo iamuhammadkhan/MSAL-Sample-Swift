@@ -1,4 +1,4 @@
-# MSAL Sample — Swift (UIKit)
+# MSAL Sample, Swift (UIKit)
 
 A working Azure AD B2C sign-in sample for iOS, in **UIKit**. Sign up or sign in against a B2C user flow, get an access token, call a protected API with it, refresh it, edit the profile, and sign out.
 
@@ -13,7 +13,7 @@ pod install          # Pods are committed, so this is optional
 open Testing-MSAL.xcworkspace
 ```
 
-Open the **workspace**, not the project. Build and run — it works out of the box against Microsoft's public demo tenant (`fabrikamb2c.onmicrosoft.com`), so you can try the whole flow without an Azure account.
+Open the **workspace**, not the project. Build and run: it works out of the box against Microsoft's public demo tenant (`fabrikamb2c.onmicrosoft.com`), so you can try the whole flow without an Azure account.
 
 Requires iOS 14+ and Xcode 13+.
 
@@ -30,11 +30,11 @@ let kEditProfilePolicy    = "b2c_1_edit_profile"
 let kResetPasswordPolicy  = "b2c_1_reset"
 ```
 
-Then set the URL scheme in [`Info.plist`](Testing-MSAL/Info.plist) to `msal<your-client-id>`. MSAL constructs its redirect URI as `msal<client-id>://auth` when you pass `redirectUri: nil`, and sign-in fails at the redirect if that scheme is not registered — the most common reason a first B2C integration does not work.
+Then set the URL scheme in [`Info.plist`](Testing-MSAL/Info.plist) to `msal<your-client-id>`. MSAL constructs its redirect URI as `msal<client-id>://auth` when you pass `redirectUri: nil`, and sign-in fails at the redirect if that scheme is not registered, the most common reason a first B2C integration does not work.
 
 ## The parts of B2C that trip people up
 
-**A "policy" is an entire user flow.** B2C hosts a separate UI per flow — sign-up/sign-in, edit profile, reset password — and each is its own authority URL. Hence three policy constants, not one.
+**A "policy" is an entire user flow.** B2C hosts a separate UI per flow (sign-up/sign-in, edit profile, reset password) and each is its own authority URL. Hence three policy constants, not one.
 
 **The authority URL encodes the policy:** `https://<host>/tfp/<tenant>/<policy>`. Each token call must target the authority belonging to the flow it is part of.
 
