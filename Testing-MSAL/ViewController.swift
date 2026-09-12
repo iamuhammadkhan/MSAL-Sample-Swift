@@ -92,7 +92,7 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
             application.acquireToken(with: parameters) { (result, error) in
                 
                 guard let result = result else {
-                    self.updateLoggingText(text: "Could not acquire token: \(error ?? "No error informarion" as! Error)")
+                    self.updateLoggingText(text: "Could not acquire token: \(error?.localizedDescription ?? "no error information returned")")
                     return
                 }
                 
@@ -204,7 +204,7 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
                             self.application.acquireToken(with: parameters) { (result, error) in
                                 
                                 guard let result = result else {
-                                    self.updateLoggingText(text: "Could not acquire new token: \(error ?? "No error informarion" as! Error)")
+                                    self.updateLoggingText(text: "Could not acquire new token: \(error?.localizedDescription ?? "no error information returned")")
                                     return
                                 }
                                 
@@ -251,7 +251,7 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
         
         urlSession.dataTask(with: request) { data, response, error in
             guard let validData = data else {
-                self.updateLoggingText(text: "Could not call API: \(error ?? "No error informarion" as! Error)")
+                self.updateLoggingText(text: "Could not call API: \(error?.localizedDescription ?? "no error information returned")")
                 return
             }
             
